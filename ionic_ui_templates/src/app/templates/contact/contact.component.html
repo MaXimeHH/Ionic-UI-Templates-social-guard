@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <ion-item>
+    <ion-label position="floating">Nom</ion-label>
+    <ion-input type="text" required [(ngModel)]="contact.name" name="name" placeholder="Entrez votre nom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" required [(ngModel)]="contact.email" name="email" placeholder="Entrez votre email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Sujet</ion-label>
+    <ion-input type="text" required [(ngModel)]="contact.subject" name="subject" placeholder="Entrez le sujet"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Message</ion-label>
+    <ion-textarea required [(ngModel)]="contact.message" name="message" placeholder="Entrez votre message"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="full" type="submit" [disabled]="!contactForm.form.valid">Envoyer</ion-button>
+</form>

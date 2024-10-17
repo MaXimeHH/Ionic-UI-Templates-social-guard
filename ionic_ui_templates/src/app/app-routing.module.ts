@@ -26,6 +26,13 @@ const routes: Routes = [
         (m) => m.CourseRivePageModule
       ),
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./templates/contact/contact.module').then(
+        (m) => m.ContactComponentModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -125,7 +125,7 @@ export class DrawerPage implements AfterViewInit, OnInit {
   }
 
   contactUs() {
-    this.router.navigate(['/course-rive']);
+    this.router.navigate(['/contact']);
   }
 
   ionViewDidEnter() {
