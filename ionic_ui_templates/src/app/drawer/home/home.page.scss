@@ -305,9 +305,9 @@ ngx-gauge {
   position: fixed;
   bottom: 70px; /* Ajustez selon la hauteur du bouton flottant */
   right: 20px;
-  width: 300px; /* Augmenté pour plus de lisibilité */
-  height: 450px; /* Ajustez la hauteur */
-  background-color: white;
+  width: 350px; /* Augmenté pour plus de lisibilité */
+  height: 500px; /* Ajustez la hauteur */
+  background-color: rgb(222, 214, 214);
   border: 1px solid #ccc;
   border-radius: 20px; /* Moins arrondi pour un design plus moderne */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Ombre pour effet de profondeur */
@@ -379,7 +379,10 @@ ngx-gauge {
 }
 
 .chat-input {
+  border-radius: 10px;
+  background-color: #aeadad;
   flex: 1;
+  width: 600px;
   margin-right: 10px;
 }
 
@@ -407,6 +410,11 @@ ion-card-title {
   font-weight: bold;
 }
 
+ion-button{
+  margin-left: 50px;
+  color: #666;
+}
+
 ion-badge {
   font-size: 14px;
   padding: 6px;
@@ -416,6 +424,11 @@ ion-badge {
 ion-item {
   --background: transparent;
   margin-bottom: 15px;
+  ion-input{
+    ::placeholder{
+      padding-left:30px ;
+    }
+  }
 }
 
 ion-label {

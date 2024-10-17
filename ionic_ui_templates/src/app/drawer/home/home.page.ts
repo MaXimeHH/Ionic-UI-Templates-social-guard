@@ -163,14 +163,11 @@ export class HomePage implements AfterViewInit, OnInit {
   sendMessage() {
     if (this.userInput.trim() !== '') {
       this.messages.push({ text: this.userInput, type: 'user' });
-      
+
       this.chatBotService.sendMessage(this.userInput).subscribe(response => {
         this.messages.push({ text: response.output?.toString(), type: 'bot' });
       });
       this.userInput = '';
-      setTimeout(() => {
-        this.messages.push({ text: 'Bonjour !', type: 'bot' });
-      }, 10000);
     }
   }
 
