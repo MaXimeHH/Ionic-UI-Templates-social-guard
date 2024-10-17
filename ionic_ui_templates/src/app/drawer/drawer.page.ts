@@ -229,10 +229,39 @@ export class DrawerPage implements AfterViewInit, OnInit {
   onDrawerNavigate(page: DrawerScreen) {
     if (page.url) {
       this.activeTab = page.name;
+
+      // Utiliser electronAPI pour interagir avec Electron
+      if (page.name === 'Télécharger l\'Application') {
+        // Envoyer une commande à Electron pour ouvrir la fenêtre des points
+        window.electronAPI.send('go-to-points-page');
+      } else if (page.name === 'Retour à Twitter') {
+        window.electronAPI.goBackToTwitter();
+      }
     }
   }
 
-  onMenuClick() {
+  launchElectronApp(): void {
+    console.log('Lancement de l\'application Electron');
+    window.electronAPI.send('launch-electron-app', { file: '../electron/main.ts' });
+  }
+
+  goToPointsPage(): void {
+    window.electronAPI.send('go-to-points-page');
+  }
+
+  goBackToTwitter(): void {
+    window.electronAPI.goBackToTwitter();
+  }
+
+  getPoints(): void {
+    window.electronAPI.getPoints((points: number) => {
+      console.log('Points:', points);
+      // Handle points in your Angular app
+    });
+  }
+
+  onMenuClick(): void {
     this.menu.toggle('main-menu');
   }
+
 }

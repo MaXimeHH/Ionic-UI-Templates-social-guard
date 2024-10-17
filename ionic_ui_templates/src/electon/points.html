@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points Accumulés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 24px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Vos Points Accumulés</h1>
+<p id="points-display">Points: 0</p>
+<button id="back-btn">Retour à Twitter</button>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // Charger les points depuis Electron
+        window.electronAPI.getPoints((points) => {
+            document.getElementById('points-display').innerText = `Points: ${points}`;
+        });
+
+        // Gestion du bouton de retour
+        document.getElementById('back-btn').addEventListener('click', () => {
+            window.electronAPI.goBackToTwitter();  // Appelle la fonction exposée dans preload.ts
+        });
+    });
+</script>
+</body>
+</html>

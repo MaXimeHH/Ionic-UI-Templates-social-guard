@@ -25,11 +25,7 @@
     <div class="divider"></div>
     <ion-content>
       <ion-list class="ion-no-padding">
-        <ion-menu-toggle
-          auto-hide="false"
-          *ngFor="let p of appPages"
-          #drawerItemList
-        >
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages" #drawerItemList>
           <ion-item
             class="drawerItem"
             lines="none"
@@ -66,6 +62,10 @@
             </ion-label>
           </ion-item>
         </ion-menu-toggle>
+        <ion-item>
+          <ion-icon name="rocket" slot="start"></ion-icon>
+          <ion-label (click)="launchElectronApp()">Lancer Electron</ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
     <div class="divider"></div>
