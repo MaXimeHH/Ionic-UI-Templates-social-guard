@@ -37,6 +37,10 @@ export class HomePage implements AfterViewInit, OnInit {
   showChat = false;
   userInput: string = '';
   messages: ChatMessage[] = [];
+  filterViolentImages: boolean = false;
+  filterSexualContent: boolean = false;
+  filterHateContent: boolean = false;
+  filterInappropriateContent: boolean = false;
 
   @ViewChildren('templateList', { read: ElementRef })
   templateListRef?: QueryList<ElementRef>;

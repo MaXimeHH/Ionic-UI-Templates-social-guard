@@ -413,6 +413,22 @@ ion-badge {
   margin-top: 10px;
 }
 
+ion-item {
+  --background: transparent;
+  margin-bottom: 15px;
+}
 
+ion-label {
+  font-size: 1em;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-
+ion-toggle {
+  --handle-background: #3880ff;
+  --background-checked: #d0e1ff;
+  margin-right: -60%;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
